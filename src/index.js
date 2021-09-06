@@ -1,7 +1,7 @@
 import 'lodash';
 import  './style.css';
 import { displayCards } from './home.js';
-import { apiPost, apiGet } from './api.js' 
+import { apiGet } from './api.js' 
 
 //Home page
 const urlFood = 'https://www.themealdb.com/api/json/v1/1/filter.php';
