@@ -3,15 +3,20 @@ const displayDish = (dish) => {
     const image = document.createElement('img');
     const name = document.createElement('h5');
     const likeB = document.createElement('button');
+    const nameLike = document.createElement('div');
     const button = document.createElement('button');
     image.setAttribute('src',dish.strMealThumb);
     name.innerText = dish.strMeal;
-    likeB.setAttribute('class', 'far fa-heart');
+    likeB.setAttribute('class', 'far fa-heart like');
     button.innerText = 'Comments';
+    button.setAttribute('class', 'comments-button');
     card.appendChild(image);
-    card.appendChild(name);
-    card.appendChild(likeB);
+    nameLike.appendChild(name);
+    nameLike.appendChild(likeB);
+    nameLike.setAttribute('class', 'name-like flex');
+    card.appendChild(nameLike);
     card.appendChild(button);
+    card.setAttribute('class','card flex');
     return card;
 }
 

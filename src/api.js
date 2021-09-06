@@ -1,7 +1,6 @@
-const url = 'https://www.themealdb.com/api/json/v1/1/filter.php';
 
 export const apiPost = async (endpoint, data) => {
-  const request = await fetch(`${url}/${endpoint}`, {
+  const request = await fetch(endpoint, {
     method: 'POST',
     mode: 'cors', // no-cors, *cors, same-origin
     cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -18,7 +17,7 @@ export const apiPost = async (endpoint, data) => {
 };
 
 export const apiGet = async (endpoint) => {
-  const request = await fetch(`${url}?${endpoint}`);
+  const request = await fetch(endpoint);
   const result = await request.json();
   return result;
 };
