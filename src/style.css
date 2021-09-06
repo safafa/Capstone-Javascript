@@ -19,3 +19,13 @@ ul {
   justify-content: space-around;
   width: 70%;
 }
+
+footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid black;
+}
+.footer{
+  padding: 2%;
+}
