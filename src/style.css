@@ -20,12 +20,18 @@ ul {
   width: 70%;
 }
 
-footer{
+footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   border-top: 1px solid black;
 }
-.footer{
+
+.footer {
   padding: 2%;
+}
+
+/* Home */
+.category {
+  flex-wrap: wrap;
 }
