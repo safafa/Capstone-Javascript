@@ -1,9 +1,10 @@
 import 'lodash';
-import  './style.css';
+import './style.css';
+
 function component() {
   const element = document.createElement('div');
 
-   // Lodash, now imported by this script
+  // Lodash, now imported by this script
 
   return element;
 }
