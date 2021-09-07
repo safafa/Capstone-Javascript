@@ -1,15 +1,15 @@
-import { apiPost, apiGet } from './api.js'
+import { apiGet } from './api.js';
 
 const envolevementUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/5UpYqnub5KIZMG9nlN2D';
 
 const showLikes = (response, span, idMeal) => {
   const data = response.filter((item) => item.item_id === idMeal);
-  if(data.length !== 0)  {
+  if (data.length !== 0){
     span.innerText = `${data[0].likes} likes`;
   } else {
-    span.innerText = `0 likes`;
-  } 
-}
+    span.innerText = '0 likes';
+  }
+};
 
 const displayDish = (dish) => {
   const card = document.createElement('div');
@@ -33,7 +33,7 @@ const displayDish = (dish) => {
   nameLike.setAttribute('class', 'name-like flex');
   card.appendChild(nameLike);
   apiGet(`${envolevementUrl}/likes`).then((response) => {
-    showLikes(response, likeSpan, dish.idMeal );
+    showLikes(response, likeSpan, dish.idMeal);
   });
   likeSpan.setAttribute('class', 'likes');
   card.appendChild(likeSpan);
