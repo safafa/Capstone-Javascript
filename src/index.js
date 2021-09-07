@@ -16,7 +16,7 @@ const dessertLink = document.getElementById('dessertlink');
 
 apiGet(`${urlFood}?c=Seafood`).then((response) => {
   const number = dishCounter(response.meals);
-  const header = document.createElement('h5');
+  const header = document.createElement('h4');
   const container = document.createElement('div');
   container.setAttribute('class', 'category flex');
   header.innerText = `${number} dishes`;
@@ -27,7 +27,7 @@ apiGet(`${urlFood}?c=Seafood`).then((response) => {
 
 apiGet(`${urlFood}?c=Lamb`).then((response) => {
   const number = dishCounter(response.meals);
-  const header = document.createElement('h5');
+  const header = document.createElement('h4');
   const container = document.createElement('div');
   container.setAttribute('class', 'category flex');
   header.innerText = `${number} dishes`;
@@ -38,9 +38,9 @@ apiGet(`${urlFood}?c=Lamb`).then((response) => {
 
 apiGet(`${urlFood}?c=Dessert`).then((response) => {
   const number = dishCounter(response.meals);
-  const header = document.createElement('h5');
+  const header = document.createElement('h4');
   const container = document.createElement('div');
-  container.setAttribute('class', 'category flex');
+  container.setAttribute('class', 'category flex number');
   header.innerText = `${number} dishes`;
   dessert.appendChild(header);
   displayCards(container, response.meals);
