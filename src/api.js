@@ -1,4 +1,3 @@
-
 export const apiPost = async (endpoint, data) => {
   const request = await fetch(endpoint, {
     method: 'POST',
