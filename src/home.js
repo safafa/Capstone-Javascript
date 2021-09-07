@@ -12,13 +12,13 @@ const showLikes = (response, span, idMeal) => {
 };
 
 const updateLikes = async (span, idMeal) => {
-    apiGet(`${envolevementUrl}/likes`).then((response) => {
-        showLikes(response, span, idMeal);
-      });  
+  apiGet(`${envolevementUrl}/likes`).then((response) => {
+    showLikes(response, span, idMeal);
+  });
 };
 
 const displayDish = (dish, likes) => {
-  const {idMeal, strMeal, strMealThumb } = dish;
+  const { idMeal, strMeal, strMealThumb } = dish;
   const card = document.createElement('div');
   const image = document.createElement('img');
   const name = document.createElement('h5');
@@ -44,10 +44,10 @@ const displayDish = (dish, likes) => {
   likeB.addEventListener('click', async () => {
     likeSpan.innerText = 'likes';
     apiPost(`${envolevementUrl}/likes`, {
-      item_id: idMeal
+      item_id: idMeal,
     }).then(() => {
-        updateLikes(likeSpan, dish.idMeal);
-    })
+      updateLikes(likeSpan, dish.idMeal);
+    });
   });
   card.appendChild(likeSpan);
   card.appendChild(button);
@@ -59,8 +59,7 @@ const displayDish = (dish, likes) => {
 export default (section, dishes) => {
   apiGet(`${envolevementUrl}/likes`).then((response) => {
     dishes.forEach((dish) => {
-        section.appendChild(displayDish(dish, response));
+      section.appendChild(displayDish(dish, response));
     });
   });
-  
 };
