@@ -1,4 +1,4 @@
-import { apiGet } from './api.js';
+import { apiPost, apiGet } from './api.js';
 
 const envolevementUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/5UpYqnub5KIZMG9nlN2D';
 
@@ -11,7 +11,14 @@ const showLikes = (response, span, idMeal) => {
   }
 };
 
-const displayDish = (dish) => {
+const updateLikes = async (span, idMeal) => {
+    apiGet(`${envolevementUrl}/likes`).then((response) => {
+        showLikes(response, span, idMeal);
+      });  
+};
+
+const displayDish = (dish, likes) => {
+  const {idMeal, strMeal, strMealThumb } = dish;
   const card = document.createElement('div');
   const image = document.createElement('img');
   const name = document.createElement('h5');
@@ -20,8 +27,8 @@ const displayDish = (dish) => {
   const likeSpan = document.createElement('span');
   const button = document.createElement('button');
   const reservation = document.createElement('button');
-  image.setAttribute('src', dish.strMealThumb);
-  name.innerText = dish.strMeal;
+  image.setAttribute('src', strMealThumb);
+  name.innerText = strMeal;
   likeB.setAttribute('class', 'far fa-heart like');
   button.innerText = 'Comments';
   reservation.innerText = 'Reservations';
@@ -32,10 +39,16 @@ const displayDish = (dish) => {
   nameLike.appendChild(likeB);
   nameLike.setAttribute('class', 'name-like flex');
   card.appendChild(nameLike);
-  apiGet(`${envolevementUrl}/likes`).then((response) => {
-    showLikes(response, likeSpan, dish.idMeal);
-  });
+  showLikes(likes, likeSpan, dish.idMeal);
   likeSpan.setAttribute('class', 'likes');
+  likeB.addEventListener('click', async () => {
+    likeSpan.innerText = 'likes';
+    apiPost(`${envolevementUrl}/likes`, {
+      item_id: idMeal
+    }).then(() => {
+        updateLikes(likeSpan, dish.idMeal);
+    })
+  });
   card.appendChild(likeSpan);
   card.appendChild(button);
   card.appendChild(reservation);
@@ -44,7 +57,10 @@ const displayDish = (dish) => {
 };
 
 export default (section, dishes) => {
-  dishes.forEach((dish) => {
-    section.appendChild(displayDish(dish));
+  apiGet(`${envolevementUrl}/likes`).then((response) => {
+    dishes.forEach((dish) => {
+        section.appendChild(displayDish(dish, response));
+    });
   });
+  
 };
