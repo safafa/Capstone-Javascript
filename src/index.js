@@ -1,6 +1,6 @@
 import 'lodash';
 import './style.css';
-import { displayCards } from './home.js';
+import displayCards from './home.js';
 import { apiGet } from './api.js';
 
 // Home page

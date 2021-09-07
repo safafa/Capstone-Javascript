@@ -22,9 +22,9 @@ const displayDish = (dish) => {
   card.appendChild(reservation);
   card.setAttribute('class', 'card flex');
   return card;
-}
+};
 
-export const displayCards = (section, dishes) => {
+export default (section, dishes) => {
   dishes.forEach((dish) => {
     section.appendChild(displayDish(dish));
   });
