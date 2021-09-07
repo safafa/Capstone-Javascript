@@ -4,7 +4,7 @@ const envolevementUrl = 'https://us-central1-involvement-api.cloudfunctions.net/
 
 const showLikes = (response, span, idMeal) => {
   const data = response.filter((item) => item.item_id === idMeal);
-  if (data.length !== 0){
+  if (data.length !== 0) {
     span.innerText = `${data[0].likes} likes`;
   } else {
     span.innerText = '0 likes';
