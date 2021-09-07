@@ -1,6 +1,16 @@
 import { apiPost, apiGet } from './api.js'
 
-const envolementUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/5UpYqnub5KIZMG9nlN2D';
+const envolevementUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/5UpYqnub5KIZMG9nlN2D';
+
+const showLikes = (response, span, idMeal) => {
+  const data = response.filter((item) => item.item_id === idMeal);
+  if(data.length !== 0)  {
+    span.innerText = `${data[0].likes} likes`;
+  } else {
+    span.innerText = `0 likes`;
+  } 
+}
+
 const displayDish = (dish) => {
   const card = document.createElement('div');
   const image = document.createElement('img');
@@ -22,14 +32,10 @@ const displayDish = (dish) => {
   nameLike.appendChild(likeB);
   nameLike.setAttribute('class', 'name-like flex');
   card.appendChild(nameLike);
-  apiGet(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/5UpYqnub5KIZMG9nlN2D/likes`).then((data) => {
-      const dato = data.filter((item) => item.item_id === dish.idMeal);
-    if(dato.length !== 0)  {
-        likeSpan.innerText = `${dato[0].likes} likes`;
-    } else {
-       likeSpan.innerText = `0 likes`;
-    } 
+  apiGet(`${envolevementUrl}/likes`).then((response) => {
+    showLikes(response, likeSpan, dish.idMeal );
   });
+  likeSpan.setAttribute('class', 'likes');
   card.appendChild(likeSpan);
   card.appendChild(button);
   card.appendChild(reservation);
