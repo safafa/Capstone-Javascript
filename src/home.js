@@ -1,3 +1,5 @@
+import { getMealRecipe } from './comment.js';
+
 import { apiPost, apiGet } from './api.js';
 
 const envolevementUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/5UpYqnub5KIZMG9nlN2D';
@@ -27,6 +29,9 @@ const displayDish = (dish, likes) => {
   const likeSpan = document.createElement('span');
   const button = document.createElement('button');
   const reservation = document.createElement('button');
+  card.setAttribute('data-id', dish.idMeal);
+  image.setAttribute('src', dish.strMealThumb);
+  name.innerText = dish.strMeal;
   image.setAttribute('src', strMealThumb);
   name.innerText = strMeal;
   likeB.setAttribute('class', 'far fa-heart like');
@@ -53,6 +58,10 @@ const displayDish = (dish, likes) => {
   card.appendChild(button);
   card.appendChild(reservation);
   card.setAttribute('class', 'card flex');
+  button.addEventListener('click', () => {
+    getMealRecipe(dish.idMeal);
+  });
+
   return card;
 };
 
