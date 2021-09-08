@@ -42,5 +42,3 @@ dessertLink.addEventListener('click', () => {
   lamb.style.display = 'none';
   seafood.style.display = 'none';
 });
-
-// Home page end

@@ -1,3 +1,5 @@
+import { getMealRecipe } from './comment.js';
+
 const displayDish = (dish) => {
   const card = document.createElement('div');
   const image = document.createElement('img');
@@ -6,6 +8,7 @@ const displayDish = (dish) => {
   const nameLike = document.createElement('div');
   const button = document.createElement('button');
   const reservation = document.createElement('button');
+  card.setAttribute('data-id', dish.idMeal);
   image.setAttribute('src', dish.strMealThumb);
   name.innerText = dish.strMeal;
   likeB.setAttribute('class', 'far fa-heart like');
@@ -21,6 +24,10 @@ const displayDish = (dish) => {
   card.appendChild(button);
   card.appendChild(reservation);
   card.setAttribute('class', 'card flex');
+  button.addEventListener('click', () => {
+    getMealRecipe(dish.idMeal);
+  });
+
   return card;
 };
 
