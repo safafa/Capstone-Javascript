@@ -16,33 +16,30 @@ const dessertLink = document.getElementById('dessertlink');
 
 apiGet(`${urlFood}?c=Seafood`).then((response) => {
   const number = dishCounter(response.meals);
-  const header = document.createElement('h4');
+  const header = document.getElementById('seaCtr');
   const container = document.createElement('div');
   container.setAttribute('class', 'category flex');
-  header.innerText = `${number} dishes`;
-  seafood.appendChild(header);
+  header.innerText = `${number}`;
   displayCards(container, response.meals);
   seafood.appendChild(container);
 });
 
 apiGet(`${urlFood}?c=Lamb`).then((response) => {
   const number = dishCounter(response.meals);
-  const header = document.createElement('h4');
+  const header = document.getElementById('lambCtr');
   const container = document.createElement('div');
   container.setAttribute('class', 'category flex');
-  header.innerText = `${number} dishes`;
-  lamb.appendChild(header);
+  header.innerText = `${number}`;
   displayCards(container, response.meals);
   lamb.appendChild(container);
 });
 
 apiGet(`${urlFood}?c=Dessert`).then((response) => {
   const number = dishCounter(response.meals);
-  const header = document.createElement('h4');
+  const header = document.getElementById('dessertCtr');
   const container = document.createElement('div');
   container.setAttribute('class', 'category flex number');
-  header.innerText = `${number} dishes`;
-  dessert.appendChild(header);
+  header.innerText = `${number}`;
   displayCards(container, response.meals);
   dessert.appendChild(container);
 });

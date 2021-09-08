@@ -1,3 +1,8 @@
+body {
+  display: block;
+  overflow-x: hidden;
+}
+
 .flex {
   display: flex;
 }
@@ -10,27 +15,49 @@ nav {
   width: 100%;
   align-items: center;
   justify-content: space-around;
-  font-size: 20px;
+  font-weight: bold;
+  margin-left: 4%;
 }
 
-a {
+header {
+  background-color: #040f0f;
+}
+
+.nav-link {
   text-decoration: none;
-  color: black;
+  color: #e8e8e9;
+}
+
+.nav-link:hover {
+  color: #289944;
+}
+
+.logo {
+  font-family: "Allison", cursive;
+  font-size: 30px;
 }
 
 ul {
   list-style: none;
   justify-content: space-around;
   width: 70%;
+  margin: auto;
+  font-size: 20px;
+  font-family: "Kaisei Decol", serif;
 }
 
 footer {
   width: 100%;
   border-top: 1px solid black;
+  background-color: #040f0f;
+  color: #e8e8e9;
+  font-family: "Kaisei Decol", serif;
+  bottom: 0;
 }
 
 .footer {
   padding: 2%;
+  font-size: 20px;
 }
 
 /* Home */
@@ -59,11 +86,15 @@ footer {
   border: solid;
   border-width: 1px;
   margin: 0 0 10% 0;
+  color: #0e3013;
+  font-family: "Kaisei Decol", serif;
 }
 
 .card img {
-  width: 100%;
+  width: 90%;
   height: 60%;
+  margin: auto;
+  border-radius: 2%;
 }
 
 .name-like {
@@ -78,9 +109,20 @@ footer {
   cursor: pointer;
 }
 
+button {
+  font-family: "Kaisei Decol", serif;
+}
+
 .comments-button {
   width: 70%;
-  margin: auto;
+  margin: 0 auto 3% auto;
+  background-color: #0e3013;
+  color: #e8e8e9;
+  font-weight: bold;
+}
+
+.btn:hover {
+  color: #289944;
 }
 
 .popUp {
@@ -116,4 +158,10 @@ i {
 .likes {
   align-self: flex-end;
   margin-right: 15px;
+  margin-bottom: 3%;
+}
+
+.badge {
+  background-color: #289944;
+  margin-left: 5px;
 }
