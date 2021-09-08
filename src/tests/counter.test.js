@@ -1,5 +1,5 @@
 import dishCounter from '../homeCounter.js';
-
+/* eslint-disable */
 global.fetch = jest.fn(() =>
   Promise.resolve({
     json: () => Promise.resolve({ "meals": [{
@@ -37,9 +37,9 @@ global.dishes = [{
     "idMeal": "52785"
 },
 ]
-
+/* eslint-enable */
 describe('Test dish counter method', () => {
   test('it returns the correct number of dishes', () => {
     expect(dishCounter(dishes)).toBe(3);
-  })
+  });
 });
