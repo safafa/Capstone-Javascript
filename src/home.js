@@ -1,5 +1,5 @@
 import { getMealRecipe } from './comment.js';
-const displayDish = (dish) => {
+
 import { apiPost, apiGet } from './api.js';
 
 const envolevementUrl = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/5UpYqnub5KIZMG9nlN2D';
