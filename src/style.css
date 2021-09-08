@@ -83,6 +83,36 @@ footer {
   margin: auto;
 }
 
+.popUp {
+  display: none;
+  grid-template-rows: auto;
+  grid-template-columns: auto;
+  width: 60%;
+  text-align: center;
+  border: 1.5px solid black;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  background: linear-gradient(360deg, rgba(0, 128, 49, 0.829), red);
+  height: 90%;
+  overflow-y: auto;
+  padding: 2rem 0;
+  z-index: 1;
+}
+
+i {
+  font-size: 2rem;
+  z-index: 100;
+}
+
+.imgPop {
+  width: 80%;
+  height: 80%;
+  margin: auto;
+}
+
 .likes {
   align-self: flex-end;
   margin-right: 15px;
