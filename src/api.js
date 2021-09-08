@@ -11,8 +11,7 @@ export const apiPost = async (endpoint, data) => {
     referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
     body: JSON.stringify(data), // body data type must match "Content-Type" header
   });
-  const result = await request.json();
-  return result;
+  return request;
 };
 
 export const apiGet = async (endpoint) => {

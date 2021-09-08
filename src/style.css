@@ -58,7 +58,7 @@ footer {
 .name-like {
   width: 90%;
   justify-content: space-between;
-  margin: 10px 15px;
+  margin: 10px 15px 0 15px;
 }
 
 .like {
@@ -91,11 +91,6 @@ footer {
   z-index: 1;
 }
 
-/* .devPop {
-  flex-direction: column;
-  justify-content: space-around;
-} */
-
 i {
   font-size: 2rem;
   z-index: 100;
@@ -105,4 +100,9 @@ i {
   width: 80%;
   height: 80%;
   margin: auto;
+}
+
+.likes {
+  align-self: flex-end;
+  margin-right: 15px;
 }
