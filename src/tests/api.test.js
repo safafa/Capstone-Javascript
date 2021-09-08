@@ -37,10 +37,11 @@ global.dishes = [{
     "idMeal": "52785"
 },
 ]
-/* eslint-enable */
+
 describe('apiGet Method', () => {
     test('it returns the correct number of dishes', () => {
         expect(apiGet('https://www.themealdb.com/api/json/v1/1/filter.php')).resolves.toBe(dishes);
         expect(fetch).toHaveBeenCalledTimes(1);
       });
 });
+/* eslint-enable */
