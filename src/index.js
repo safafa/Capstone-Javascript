@@ -3,6 +3,7 @@ import './style.css';
 
 import displayCards from './home.js';
 import { apiGet } from './api.js';
+import dishCounter from './homeCounter.js';
 
 // Home page
 const urlFood = 'https://www.themealdb.com/api/json/v1/1/filter.php';
@@ -14,15 +15,36 @@ const lambLink = document.getElementById('lamblink');
 const dessertLink = document.getElementById('dessertlink');
 
 apiGet(`${urlFood}?c=Seafood`).then((response) => {
-  displayCards(seafood, response.meals);
+  const number = dishCounter(response.meals);
+  const header = document.createElement('h4');
+  const container = document.createElement('div');
+  container.setAttribute('class', 'category flex');
+  header.innerText = `${number} dishes`;
+  seafood.appendChild(header);
+  displayCards(container, response.meals);
+  seafood.appendChild(container);
 });
 
 apiGet(`${urlFood}?c=Lamb`).then((response) => {
-  displayCards(lamb, response.meals);
+  const number = dishCounter(response.meals);
+  const header = document.createElement('h4');
+  const container = document.createElement('div');
+  container.setAttribute('class', 'category flex');
+  header.innerText = `${number} dishes`;
+  lamb.appendChild(header);
+  displayCards(container, response.meals);
+  lamb.appendChild(container);
 });
 
 apiGet(`${urlFood}?c=Dessert`).then((response) => {
-  displayCards(dessert, response.meals);
+  const number = dishCounter(response.meals);
+  const header = document.createElement('h4');
+  const container = document.createElement('div');
+  container.setAttribute('class', 'category flex number');
+  header.innerText = `${number} dishes`;
+  dessert.appendChild(header);
+  displayCards(container, response.meals);
+  dessert.appendChild(container);
 });
 
 seafoodLink.addEventListener('click', () => {

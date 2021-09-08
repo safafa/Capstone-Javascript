@@ -42,6 +42,17 @@ footer {
   justify-content: space-around;
 }
 
+.sec {
+  flex-direction: column;
+  padding-top: 5%;
+}
+
+.sec h4 {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
 .card {
   flex-direction: column;
   width: 30%;

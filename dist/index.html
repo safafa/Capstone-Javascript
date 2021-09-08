@@ -4,19 +4,25 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
   <title>FOODY</title>
 <script defer src="main.js"></script></head>
 <body>
   <header>
     <nav class="flex">
-      <a href="#" class="logo">FOODY</a>
+      <a href="/" class="logo">FOODY</a>
       <ul class="flex">
-        <li><a href="#">Seafood</a></li>
-        <li><a href="#">Lamb</a></li>
-        <li><a href="#">Dessert</a></li>
+        <li><a href="#seafood" id='seafoodlink'>Seafood</a></li>
+        <li><a href="#lamb" id='lamblink'>Lamb</a></li>
+        <li><a href="#dessert" id='dessertlink'>Dessert</a></li>
       </ul>
     </nav>
   </header>
+  <main>
+    <section id="seafood" class="flex sec"></section>
+    <section id="lamb" class="none sec"></section>
+    <section id="dessert" class="none sec"></section>
+  </main>
   <footer>
     <h3 class="footer">Created by Microverse under CC license</h3>
   </footer>
