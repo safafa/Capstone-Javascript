@@ -1,11 +1,13 @@
 import { apiGet, apiPost } from './api.js';
+import counter from './homeCounter.js';
 
 const displayComments = (commentDiv, comments) => {
   if (comments.length >= 1) {
     commentDiv.innerHTML = '';
     comments.forEach((element) => {
-      const comP = document.createElement('p');
-      comP.innerHTML = `${element.creation_date} ${element.username}: ${element.comment}`;
+      const comP = document.createElement('div');
+      comP.classList.add('commentOutput');
+      comP.innerHTML = `<span class= 'span'>${element.creation_date}</span><span class= 'span'> from:<strong>${element.username}</strong></span> <span class= 'span'> ${element.comment}</span>`;
       commentDiv.appendChild(comP);
     });
   }
@@ -23,24 +25,25 @@ const mealRecipeModal = (meal, comments) => {
   const userId = meal.idMeal + 1;
   const commentId = meal.idMeal + 2;
   const formId = meal.idMeal + 3;
+  const badgeId = meal.idMeal + 4;
 
   const html = `
-    <i class="far fa-window-close" id = "closeBtn"></i>
+    <i class="far fa-window-close closeBtn" id = "closeBtn"></i>
         <img src="${meal.strMealThumb}" class = "imgPop"alt="">
-        <div class="d-flex justify-content-around"><span>meal type: ${meal.strMeal}</span>
-        <span>category: ${meal.strCategory}</span></div>
-        <div class="d-flex justify-content-around"><span>video link:<a href="${meal.strYoutube}" >video</a> </span>
-        <span>tags: ${meal.strTags}</span></div>
-        <h3>Comments(2)</h3>
-       <div id = ${meal.idMeal}></div>
+        <div class="properties"><span class='span1'>meal type: ${meal.strMeal}</span>
+        <span span1>category: ${meal.strCategory}</span></div>
+        <div class="properties"><span span1>video link:<a href="${meal.strYoutube}"  class = 'link'>watch ideo</a> </span>
+        <span span1>tags: ${meal.strTags}</span></div>
+        <h3>Comments<span class="badge" id=${badgeId}>0</span></h3>
+       <div class = "overflow" id = ${meal.idMeal}></div>
         <form id = ${formId}>
           <div class="form-group mt-2">
-          <input type="text" class="form-sm-control" id = ${userId} required>
+          <input type="text" class="form-control w-50 m-auto" id = ${userId}  placeholder = "your username" required>
           </div>
           <div class="form-group mt-3">
-          <input type="text" class="form-sm-control" id = ${commentId} required>
+          <input type="text" class="form-control w-50 m-auto" id = ${commentId} maxlength="10" placeholder = "your comment" required>
           </div>
-          <button class="btn btn-dark mt-2">comment</button>
+          <button class="btn comments-button mt-2 w-25">comment</button>
         </form>
 `;
   popSec.innerHTML = html;
@@ -63,6 +66,8 @@ const mealRecipeModal = (meal, comments) => {
     });
     form.reset();
   });
+  const badge = document.getElementById(badgeId);
+  badge.innerHTML = counter(comments);
 };
 export const getMealRecipe = (idMeal) => {
   apiGet(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`)

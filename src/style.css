@@ -1,3 +1,15 @@
+html {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+html::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+
 body {
   display: block;
   overflow-x: hidden;
@@ -128,19 +140,30 @@ button {
   display: none;
   grid-template-rows: auto;
   grid-template-columns: auto;
-  width: 60%;
+  width: 50%;
   text-align: center;
   border: 1.5px solid black;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #fff;
-  background: linear-gradient(360deg, rgba(0, 128, 49, 0.829), red);
+  color: #e8e8e9;
+  background: linear-gradient(360deg, rgba(0, 128, 49, 0.897), #0e3013ea);
   height: 90%;
   overflow-y: auto;
+
+  /* overflow: -moz-scrollbars-none; */
   padding: 2rem 0;
+  font-family: "Kaisei Decol", serif;
+  font-size: 1rem;
   z-index: 1;
+  border-radius: 5%;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.popUp::-webkit-scrollbar {
+  display: none;
 }
 
 i {
@@ -152,6 +175,7 @@ i {
   width: 80%;
   height: 80%;
   margin: auto;
+  border-radius: 6%;
 }
 
 .likes {
@@ -163,4 +187,47 @@ i {
 .badge {
   background-color: #289944;
   margin-left: 5px;
+}
+
+.commentOutput {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+  border: 1.5px solid green;
+  background: rgba(255, 0, 0, 0.336);
+  border-radius: 7%;
+  text-align: center;
+}
+
+.span {
+  border-right: 1.5px solid black;
+  align-self: center;
+  text-align: center;
+  margin: auto;
+  padding-right: 2%;
+  width: 100%;
+  flex-basis: auto;
+}
+
+.properties {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+  padding: 1%;
+  border: 1.5px solid black;
+}
+
+.link {
+  color: red;
+  text-decoration: none;
+  margin-left: 5px;
+}
+
+.closeBtn {
+  position: absolute;
+  left: 50%;
+  top: 5%;
+  z-index: 999;
 }
