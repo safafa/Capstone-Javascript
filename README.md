@@ -1,6 +1,8 @@
 # FOODY: Capstone-Javascript:
 > Foody website displays meals informations from three different categories. It also allows users to submit their comments and likes for their favorite dish. All data is preserved thanks to the external mealsDB API, and involvement API.
 
+![image](https://user-images.githubusercontent.com/43698511/132663839-3ab28321-2180-4442-8851-67e01fafaca9.png)
+
 This project features ES6, Webpack, APIs, Jest.
 
 ## Built With
