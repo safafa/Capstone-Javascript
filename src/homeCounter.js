@@ -1,7 +1,7 @@
 export default (dishes) => {
-  if (dishes.length === undefined) {
-    return 0;
-  }else {
-    return dishes.length;
+  let value = 0;
+  if (dishes.length !== undefined) {
+    value = dishes.length;;
   }
+  return value;
 };
