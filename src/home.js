@@ -31,6 +31,7 @@ const displayDish = (dish, likes) => {
   const reservation = document.createElement('button');
   card.setAttribute('data-id', idMeal);
   image.setAttribute('src', strMealThumb);
+  image.setAttribute('alt', strMeal);
   name.innerText = dish.strMeal;
   image.setAttribute('src', strMealThumb);
   name.innerText = strMeal;
