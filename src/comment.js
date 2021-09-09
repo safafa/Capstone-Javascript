@@ -29,11 +29,11 @@ const mealRecipeModal = (meal, comments) => {
 
   const html = `
     <i class="far fa-window-close closeBtn" id = "closeBtn"></i>
-        <img src="${meal.strMealThumb}" class = "imgPop"alt="">
+        <img src="${meal.strMealThumb}" class = "imgPop" alt="meal">
         <div class="properties"><span class='span1'>meal type: ${meal.strMeal}</span>
         <span span1>category: ${meal.strCategory}</span></div>
         <div class="properties"><span span1>video link:<a href="${meal.strYoutube}"  class = 'link'>watch ideo</a> </span>
-        <span span1>tags: ${meal.strTags}</span></div>
+        <span span1>tags: ${meal.strIngredient1}, ${meal.strIngredient2} </span></div>
         <h3>Comments<span class="badge" id=${badgeId}>0</span></h3>
        <div class = "overflow" id = ${meal.idMeal}></div>
         <form id = ${formId}>

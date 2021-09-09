@@ -1,6 +1,6 @@
 html {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -153,17 +153,26 @@ button {
   overflow-y: auto;
 
   /* overflow: -moz-scrollbars-none; */
-  padding: 2rem 0;
+  padding: 0.5rem 0;
   font-family: "Kaisei Decol", serif;
   font-size: 1rem;
   z-index: 1;
   border-radius: 5%;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .popUp::-webkit-scrollbar {
   display: none;
+}
+
+.overflow {
+  height: 50px;
+  overflow-y: scroll;
+}
+
+h3 {
+  margin-top: 10px;
 }
 
 i {
@@ -173,7 +182,7 @@ i {
 
 .imgPop {
   width: 80%;
-  height: 80%;
+  height: 90%;
   margin: auto;
   border-radius: 6%;
 }
@@ -226,8 +235,5 @@ i {
 }
 
 .closeBtn {
-  position: absolute;
-  left: 50%;
-  top: 5%;
   z-index: 999;
 }
