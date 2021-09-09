@@ -29,8 +29,8 @@ const displayDish = (dish, likes) => {
   const likeSpan = document.createElement('span');
   const button = document.createElement('button');
   const reservation = document.createElement('button');
-  card.setAttribute('data-id', dish.idMeal);
-  image.setAttribute('src', dish.strMealThumb);
+  card.setAttribute('data-id', idMeal);
+  image.setAttribute('src', strMealThumb);
   name.innerText = dish.strMeal;
   image.setAttribute('src', strMealThumb);
   name.innerText = strMeal;
@@ -44,14 +44,14 @@ const displayDish = (dish, likes) => {
   nameLike.appendChild(likeB);
   nameLike.setAttribute('class', 'name-like flex');
   card.appendChild(nameLike);
-  showLikes(likes, likeSpan, dish.idMeal);
+  showLikes(likes, likeSpan, idMeal);
   likeSpan.setAttribute('class', 'likes');
   likeB.addEventListener('click', async () => {
     likeSpan.innerText = 'likes';
     apiPost(`${envolevementUrl}/likes`, {
       item_id: idMeal,
     }).then(() => {
-      updateLikes(likeSpan, dish.idMeal);
+      updateLikes(likeSpan, idMeal);
     });
   });
   card.appendChild(likeSpan);
@@ -59,7 +59,7 @@ const displayDish = (dish, likes) => {
   card.appendChild(reservation);
   card.setAttribute('class', 'card flex');
   button.addEventListener('click', () => {
-    getMealRecipe(dish.idMeal);
+    getMealRecipe(idMeal);
   });
 
   return card;
