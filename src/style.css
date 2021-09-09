@@ -181,10 +181,11 @@ i {
 }
 
 .imgPop {
-  width: 80%;
-  height: 90%;
+  width: 350px;
+  height: 350px;
   margin: auto;
   border-radius: 6%;
+  padding: 2% 0;
 }
 
 .likes {
